@@ -15,19 +15,19 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 
-import { Input, TextArea, Select, Upload } from "~/ui/common";
+import { Input, TextArea, Select, Upload } from "../../ui/common";
 
-import { slugify } from "~/utils/utils";
+import { slugify } from "../../utils/utils";
 
-import { db } from "~/utils/db.server";
-import errorHandler from "~/utils/errorHandler";
+import { db } from "../../utils/db.server";
+import errorHandler from "../../utils/errorHandler";
 
-import { useDisplayErrors } from "~/hooks";
+import { useDisplayErrors } from "../../hooks";
 
-import { AppErrors } from "~/types";
+import { AppErrors } from "../../types";
 
-import { getUserId, getUserInfo, requireUserId } from "~/utils/auth.server";
-import { Layout } from "~/ui";
+import { getUserId, getUserInfo, requireUserId } from "../../utils/auth.server";
+import { Layout } from "../../ui";
 
 const PostSchema = z.object({
   title: z.string().nonempty("title is required").default(""),

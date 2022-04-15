@@ -1,6 +1,6 @@
 import type { ActionFunction, LoaderFunction } from "remix";
 import { redirect } from "remix";
-import { logout } from "~/utils/auth.server";
+import { logout } from "../../utils/auth.server";
 
 export let action: ActionFunction = async ({ request }) => {
   return logout(request);

@@ -4,7 +4,7 @@ import fs from "fs/promises";
 import bcrypt from "bcryptjs";
 import parseFrontMatter from "front-matter";
 
-import { slugify } from "~/utils/slugify";
+import { slugify } from "../app/utils/slugify";
 
 import type { Category } from "@prisma/client";
 

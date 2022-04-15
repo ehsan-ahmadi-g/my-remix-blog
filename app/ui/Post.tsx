@@ -4,7 +4,7 @@ import React from "react";
 import { Tag } from "antd";
 import { tw } from "twind";
 
-import Avatar from "~/assets/images/author-avatar.jpg";
+import Avatar from "../assets/images/author-avatar.jpg";
 
 interface P extends LinkProps {
   title: string;

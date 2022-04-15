@@ -7,13 +7,13 @@ import { z } from "zod";
 
 import { Button } from "antd";
 
-import { login, signup, createUserSession } from "~/utils/auth.server";
-import errorHandler from "~/utils/errorHandler";
+import { login, signup, createUserSession } from "../../utils/auth.server";
+import errorHandler from "../../utils/errorHandler";
 
-import { Input, RadioGroup } from "~/ui/common";
+import { Input, RadioGroup } from "../../ui/common";
 
-import { useDisplayErrors } from "~/hooks";
-import { AppErrors } from "~/types";
+import { useDisplayErrors } from "../../hooks";
+import { AppErrors } from "../../types";
 
 const LoginSchema = z.object({
   email: z

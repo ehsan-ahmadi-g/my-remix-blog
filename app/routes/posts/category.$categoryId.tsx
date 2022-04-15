@@ -3,10 +3,10 @@ import type { LoaderFunction } from "remix";
 
 import type { Post, Category, User } from "@prisma/client";
 
-import { db } from "~/utils/db.server";
+import { db } from "../../utils/db.server";
 
-import { Layout, Post as PostComp } from "~/ui";
-import { getUserInfo } from "~/utils/auth.server";
+import { Layout, Post as PostComp } from "../../ui";
+import { getUserInfo } from "../../utils/auth.server";
 
 type PostWithCategory = Post & {
   author: User | null;

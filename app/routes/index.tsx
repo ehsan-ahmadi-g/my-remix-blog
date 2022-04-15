@@ -8,15 +8,15 @@ import type { Post, Category, User } from "@prisma/client";
 
 import { tw } from "twind";
 
-import { db } from "~/utils/db.server";
-import { getUserInfo } from "~/utils/auth.server";
+import { db } from "../utils/db.server";
+import { getUserInfo } from "../utils/auth.server";
 
-import { Post as PostComp, Layout } from "~/ui";
+import { Post as PostComp, Layout } from "../ui";
 
-import HeaderBG from "~/assets/images/home-header.jpeg";
+import HeaderBG from "../assets/images/home-header.jpeg";
 
-import Carousel1 from "~/assets/images/carousel-1.jpg";
-import Carousel2 from "~/assets/images/carousel-2.jpg";
+import Carousel1 from "../assets/images/carousel-1.jpg";
+import Carousel2 from "../assets/images/carousel-2.jpg";
 
 type PostWithCategory = Post & {
   categories: Array<Category>;

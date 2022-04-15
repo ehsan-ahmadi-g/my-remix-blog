@@ -5,7 +5,7 @@ import { Dropdown, Menu } from "antd";
 
 import type { User } from "@prisma/client";
 
-import RemixLogo from "~/ui/Logo";
+import RemixLogo from "../ui/Logo";
 import { DownOutlined } from "@ant-design/icons";
 
 interface P {

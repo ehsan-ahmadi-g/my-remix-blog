@@ -6,10 +6,10 @@ import { Tag } from "antd";
 
 import type { Post, User, Category } from "@prisma/client";
 
-import { Layout } from "~/ui";
+import { Layout } from "../../ui";
 
-import { db } from "~/utils/db.server";
-import { getUserInfo } from "~/utils/auth.server";
+import { db } from "../../utils/db.server";
+import { getUserInfo } from "../../utils/auth.server";
 
 type LoaderData = {
   post: (Post & { categories: Category[] }) | null;

@@ -4,14 +4,14 @@ import type { LoaderFunction } from "remix";
 
 import type { Post, Category, User } from "@prisma/client";
 
-import { db } from "~/utils/db.server";
+import { db } from "../../utils/db.server";
 
 import { tw } from "twind";
 
-import { Post as PostComp, Layout } from "~/ui";
+import { Post as PostComp, Layout } from "../../ui";
 
 import { Button } from "antd";
-import { getUserInfo } from "~/utils/auth.server";
+import { getUserInfo } from "../../utils/auth.server";
 
 type PostWithCategory = Post & {
   categories: Array<Pick<Category, "name" | "id">>;

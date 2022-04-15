@@ -12,10 +12,10 @@ import {
 import type { LinksFunction } from "remix";
 import { ToastContainer } from "react-toastify";
 
-import { Layout } from "~/ui";
+import { Layout } from "./ui";
 
-import styles from "~/styles/tailwind.css";
-import antdCustomStyles from "~/styles/antd.customize.css";
+import styles from "./styles/tailwind.css";
+import antdCustomStyles from "./styles/antd.customize.css";
 import antdStyles from "antd/dist/antd.css";
 import toastStyle from "react-toastify/dist/ReactToastify.css";
 

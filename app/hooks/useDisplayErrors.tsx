@@ -1,7 +1,7 @@
 import * as React from "react";
-import errorHandler from "~/utils/errorHandler";
+import errorHandler from "../utils/errorHandler";
 
-import { AppErrors } from "~/types";
+import { AppErrors } from "../types";
 
 const useDisplayErrors = (errors: AppErrors | undefined) => {
   console.log({ errors });

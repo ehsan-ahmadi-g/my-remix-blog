@@ -14,9 +14,6 @@ import { UploadOutlined } from "@ant-design/icons";
 import { apply, tw } from "twind";
 
 import ErrorMessage from "./ErrorMessage";
-import React from "react";
-
-// import UploadHandler from "~/utils/file-upload-handler.server";
 
 interface CustomUploadProps {
   inputClassName?: string;
