@@ -39,6 +39,10 @@ const Post: React.FC<P> = ({
             src={thumbnail || DefaultImage}
             alt="post thumbnail"
             className="h-auto w-full mx-auto"
+            style={{
+              minHeight: 320,
+              minWidth: 320,
+            }}
           />
         </div>
 
