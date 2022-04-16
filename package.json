@@ -7,7 +7,7 @@
     "postinstall": "remix setup node",
     "seed": "node --require esbuild-register prisma/seed.ts",
     "pre:build": "prisma generate",
-    "build": "npm run build:css && remix build",
+    "build": "npm run seed && npm run build:css && remix build",
     "build:css": "tailwindcss -o ./app/styles/tailwind.css --minify",
     "dev": "concurrently \"npm run dev:css\" \"remix dev\"",
     "dev:css": "tailwindcss -o ./app/styles/tailwind.css --watch"
