@@ -33,10 +33,10 @@ async function seed() {
 
   const passwordHash = await bcrypt.hash("password", 10);
 
-  const dibi = await db.user.create({
+  const user = await db.user.create({
     data: {
-      email: "dibi@asb.gabi",
-      name: "dibi",
+      email: "jack@user.com",
+      name: "jack",
       passwordHash,
     },
   });
@@ -59,8 +59,6 @@ async function seed() {
     })
   );
 
-  console.log({ dibi });
-
   await Promise.all(
     getPosts().map(async (post) => {
       return db.post.create({
@@ -69,7 +67,7 @@ async function seed() {
           title: post.title.trim(),
           description: post.description,
           content: postMDX.body,
-          authorId: dibi.id,
+          authorId: user.id,
           slug: slugify(`${post.title}--${post.categories.join("--")}`),
           categories: {
             connect: post.categories
