@@ -121,6 +121,8 @@ export const action: ActionFunction = async ({ request }) => {
       },
     });
 
+    console.log({ newPost });
+
     return redirect(`/posts/${newPost.slug}`);
   } catch (error) {
     const appErrors = errorHandler.detectPrismaError(error);
@@ -193,7 +195,7 @@ export default function NewPost() {
           <Upload className="my-3" name="thubmnail" control={form.control} />
 
           <button
-            className="flex flex-row justify-center mx-auto border border-indigo-500 rounded px-4 py-2 mr-2"
+            className="flex flex-row justify-center mx-auto border border-xcolor4 rounded px-4 py-2 mr-2"
             type="submit"
           >
             {transition.submission ? "Creating..." : "Create Post"}

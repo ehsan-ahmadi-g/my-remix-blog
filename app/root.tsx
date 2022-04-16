@@ -117,13 +117,12 @@ export function ErrorBoundary({ error }: { error: Error }) {
   return (
     <Document title="Error!">
       <Layout>
-        <div>
+        <div className="px-12 mt-12">
           <h1>There was an error</h1>
           <p>{error.message}</p>
           <hr />
-          <p>
-            Hey, developer, you should replace this with what you want your
-            users to see.
+          <p className="text-3xl font-bold text-center mt-5">
+            Server is down , please try again later
           </p>
         </div>
       </Layout>

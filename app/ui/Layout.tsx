@@ -52,10 +52,13 @@ function Layout({ children, className, user }: React.PropsWithChildren<P>) {
                   href: "/posts",
                   text: "Posts",
                 },
-                user ? [{ href: "/admin/new", text: "Add Post" }] : [],
+                user
+                  ? [{ text: "Add Post", href: "/admin/new" }]
+                  : [{ text: "Login", href: "/auth/login" }],
                 {
-                  href: "https://github.com/remix-run/remix",
+                  href: "https://github.com/ehsan-ahmadi-g",
                   text: "GitHub",
+                  target: "_blank",
                 },
               ]
                 .flat()
@@ -64,12 +67,19 @@ function Layout({ children, className, user }: React.PropsWithChildren<P>) {
                     key={el.href}
                     className="mx-3 text-bold text-base font-semibold"
                   >
-                    <Link to={el.href}>{el.text}</Link>
+                    <Link
+                      rel="prefetch"
+                      prefetch="render"
+                      to={el.href}
+                      target={"target" in el ? el.target : ""}
+                    >
+                      {el.text}
+                    </Link>
                   </li>
                 ))}
 
               {user ? (
-                <li className="mx-3">
+                <li className="mx-3 overflow-hidden">
                   <Dropdown
                     trigger={["click"]}
                     overlay={

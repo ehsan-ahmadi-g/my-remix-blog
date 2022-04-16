@@ -30,14 +30,14 @@ const Post: React.FC<P> = ({
       <div className="group relative">
         <div
           className={tw(
-            "h-60 w-full transition-all opacity-100 group-hover:(bg-red-500 scale-105 opacity-10)"
+            "w-full transition-all opacity-100 group-hover:(bg-red-500 scale-105 opacity-10)"
           )}
         >
           {thumbnail ? (
             <img
               src={thumbnail}
               alt="post thumbnail"
-              className="h-full w-full"
+              className="h-auto w-full mx-auto"
             />
           ) : null}
         </div>

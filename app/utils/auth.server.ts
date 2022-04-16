@@ -27,7 +27,7 @@ export async function signup({ email, password }: LoginForm) {
     data: {
       email,
       passwordHash: bcrypt.hashSync(password),
-      name: email,
+      name: email.split("@")[0],
     },
   });
 

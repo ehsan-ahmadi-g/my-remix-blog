@@ -156,7 +156,7 @@ export default function Index() {
             {category.name.toUpperCase()}
           </h1>
 
-          <div className="grid grid-cols-3 gap-x-8">
+          <div className="grid grid-cols-3 gap-x-28">
             {data.posts[category.name].slice(0, 3).map((post) => (
               <PostComp
                 key={post.id}
@@ -172,7 +172,7 @@ export default function Index() {
 
           <div className="flex flex-row justify-end items-center">
             <Link
-              className="border-0 bg-indigo-500 text-white rounded px-4 py-2 mr-2 hover:text-white"
+              className="border-0 bg-xcolor4 text-primary rounded px-4 py-2 mr-2 hover:text-primary"
               to={`/posts/category/${category.id}`}
             >
               More...

@@ -88,7 +88,7 @@ export const convertImageToBase64 = async (imgPath: string) => {
   const fullPath = path.join(imagesPath, imgPath);
   const thumbnail = await fs.readFile(fullPath);
 
-  const resizedImage = await sharp(thumbnail).resize(320, 240).toBuffer();
+  const resizedImage = await sharp(thumbnail).resize(320, 320).toBuffer();
 
   const extensionName = path.extname(fullPath);
 
