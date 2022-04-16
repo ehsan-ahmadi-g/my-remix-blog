@@ -6,6 +6,8 @@ import { tw } from "twind";
 
 import Avatar from "../assets/images/author-avatar.jpg";
 
+import DefaultImage from "../assets/images/post1.jpg";
+
 interface P extends LinkProps {
   title: string;
   description: string;
@@ -30,16 +32,14 @@ const Post: React.FC<P> = ({
       <div className="group relative">
         <div
           className={tw(
-            "w-full transition-all opacity-100 group-hover:(bg-red-500 scale-105 opacity-10)"
+            "w-full h-80 transition-all opacity-100 group-hover:(bg-red-500 scale-105 opacity-10)"
           )}
         >
-          {thumbnail ? (
-            <img
-              src={thumbnail}
-              alt="post thumbnail"
-              className="h-auto w-full mx-auto"
-            />
-          ) : null}
+          <img
+            src={thumbnail || DefaultImage}
+            alt="post thumbnail"
+            className="h-auto w-full mx-auto"
+          />
         </div>
 
         <p
