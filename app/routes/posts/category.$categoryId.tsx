@@ -27,7 +27,6 @@ export let loader: LoaderFunction = async ({ request, params }) => {
 
   const data = {
     posts: await db.post.findMany({
-      take: 1,
       where: {
         categories: {
           every: {

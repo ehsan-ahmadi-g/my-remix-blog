@@ -26,7 +26,6 @@ type LoaderData = {
 
 export let loader: LoaderFunction = async ({ request }) => {
   const posts = await db.post.findMany({
-    take: 1,
     include: {
       categories: {
         select: {
@@ -39,7 +38,6 @@ export let loader: LoaderFunction = async ({ request }) => {
   });
 
   const categories = await db.category.findMany({
-    take: 1,
     select: {
       name: true,
       id: true,

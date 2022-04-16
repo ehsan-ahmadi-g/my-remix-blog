@@ -40,7 +40,6 @@ type LoaderReturnType = {
 export let loader: LoaderFunction = async ({ request }) => {
   const data: LoaderData = {
     posts: await db.post.findMany({
-      take: 1,
       include: {
         categories: true,
         author: true,
@@ -48,7 +47,7 @@ export let loader: LoaderFunction = async ({ request }) => {
     }),
   };
 
-  const categories = await db.category.findMany({ take: 1 });
+  const categories = await db.category.findMany();
 
   const currentUser = await getUserInfo(request);
 
