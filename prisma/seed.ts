@@ -59,6 +59,8 @@ async function seed() {
     })
   );
 
+  console.log({ dibi });
+
   await Promise.all(
     getPosts().map(async (post) => {
       return db.post.create({
