@@ -32,12 +32,11 @@ import { Layout } from "../../ui";
 const PostSchema = z.object({
   title: z.string().nonempty("title is required").default(""),
   description: z.string().nonempty("description is required").default(""),
-  thubmnail: z.string().nonempty("thubmnail is required").default(""),
   markdown: z.string().nonempty("markdown is required").default(""),
   categories: z.array(z.string()),
 });
 
-type NewPostScheme = z.infer<typeof PostSchema>;
+type NewPostScheme = z.infer<typeof PostSchema> & { thubmnail: string };
 
 type LoaderData = {
   categories: Array<Pick<Category, "name" | "id">>;
@@ -112,7 +111,7 @@ export const action: ActionFunction = async ({ request }) => {
         description: x.data.description,
         content: x.data.markdown,
         authorId: userId,
-        thumbnail: x.data.thubmnail,
+        ...(data.thumbnail && { thumbnail: data.thumbnail }),
         categories: {
           connect: x.data.categories
             .map((id) => ({ id }))

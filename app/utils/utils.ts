@@ -81,20 +81,3 @@ export const slugify = (text: string) => {
     .replace(/^-+/, "")
     .replace(/-+$/, "");
 };
-
-export const convertImageToBase64 = async (imgPath: string) => {
-  const imagesPath = path.join(__dirname, "../assets/images");
-
-  const fullPath = path.join(imagesPath, imgPath);
-  const thumbnail = await fs.readFile(fullPath);
-
-  const resizedImage = await sharp(thumbnail).resize(320, 320).toBuffer();
-
-  const extensionName = path.extname(fullPath);
-
-  const base64ImageStr = `data:image/${extensionName
-    .split(".")
-    .pop()};base64,${resizedImage.toString("base64")}`;
-
-  return base64ImageStr;
-};

@@ -525,6 +525,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-right: 0.75rem;
 }
 
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .mx-0 {
   margin-left: 0px;
   margin-right: 0px;
@@ -535,11 +540,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 0.75rem;
 }
 
-.mx-auto {
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .my-2 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
@@ -548,6 +548,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .my-1 {
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
+}
+
+.mt-12 {
+  margin-top: 3rem;
+}
+
+.mt-5 {
+  margin-top: 1.25rem;
 }
 
 .mt-3 {
@@ -594,20 +602,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 5rem;
 }
 
-.mt-5 {
-  margin-top: 1.25rem;
-}
-
 .mt-0\.5 {
   margin-top: 0.125rem;
 }
 
 .mt-0 {
   margin-top: 0px;
-}
-
-.mt-12 {
-  margin-top: 3rem;
 }
 
 .flex {
@@ -636,14 +636,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .h-16 {
   height: 4rem;
-}
-
-.h-60 {
-  height: 15rem;
-}
-
-.h-full {
-  height: 100%;
 }
 
 .h-8 {
@@ -680,10 +672,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-28 {
   width: 7rem;
-}
-
-.w-auto {
-  width: auto;
 }
 
 .scale-105 {
@@ -740,28 +728,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   gap: 2rem;
 }
 
-.gap-x-8 {
-  -moz-column-gap: 2rem;
-       column-gap: 2rem;
+.gap-x-28 {
+  -moz-column-gap: 7rem;
+       column-gap: 7rem;
 }
 
 .gap-y-4 {
   row-gap: 1rem;
 }
 
-.gap-x-12 {
-  -moz-column-gap: 3rem;
-       column-gap: 3rem;
-}
-
-.gap-x-20 {
-  -moz-column-gap: 5rem;
-       column-gap: 5rem;
-}
-
-.gap-x-28 {
-  -moz-column-gap: 7rem;
-       column-gap: 7rem;
+.gap-x-8 {
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
 }
 
 .overflow-hidden {
@@ -797,19 +775,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-color: rgb(197 198 199 / var(--tw-border-opacity));
 }
 
-.border-indigo-500 {
+.border-xcolor4 {
   --tw-border-opacity: 1;
-  border-color: rgb(99 102 241 / var(--tw-border-opacity));
+  border-color: rgb(102 252 241 / var(--tw-border-opacity));
 }
 
 .border-xcolor5 {
   --tw-border-opacity: 1;
   border-color: rgb(69 162 158 / var(--tw-border-opacity));
-}
-
-.border-xcolor4 {
-  --tw-border-opacity: 1;
-  border-color: rgb(102 252 241 / var(--tw-border-opacity));
 }
 
 .bg-xcolor1 {
@@ -827,9 +800,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(228 228 231 / var(--tw-bg-opacity));
 }
 
-.bg-indigo-500 {
+.bg-xcolor4 {
   --tw-bg-opacity: 1;
-  background-color: rgb(99 102 241 / var(--tw-bg-opacity));
+  background-color: rgb(102 252 241 / var(--tw-bg-opacity));
 }
 
 .bg-xcolor2 {
@@ -847,11 +820,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(3 137 167 / var(--tw-bg-opacity));
 }
 
-.bg-xcolor4 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(102 252 241 / var(--tw-bg-opacity));
-}
-
 .bg-cover {
   background-size: cover;
 }
@@ -862,6 +830,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .p-3 {
   padding: 0.75rem;
+}
+
+.px-12 {
+  padding-left: 3rem;
+  padding-right: 3rem;
 }
 
 .px-20 {
@@ -887,11 +860,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-}
-
-.px-12 {
-  padding-left: 3rem;
-  padding-right: 3rem;
 }
 
 .px-3 {
@@ -925,6 +893,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
 .text-6xl {
   font-size: 3.75rem;
   line-height: 1;
@@ -933,11 +906,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
-}
-
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
 }
 
 .text-base {
@@ -1058,11 +1026,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .hover\:bg-xcolor4:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(102 252 241 / var(--tw-bg-opacity));
-}
-
-.hover\:text-white:hover {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .hover\:text-xcolor1:hover {

@@ -3,15 +3,33 @@ import fs from "fs/promises";
 import bcrypt from "bcryptjs";
 import parseFrontMatter from "front-matter";
 
-import { slugify, convertImageToBase64 } from "../app/utils/utils";
+import { slugify } from "../app/utils/utils";
 
 import { PrismaClient } from "@prisma/client";
 
 import type { Category } from "@prisma/client";
+import sharp from "sharp";
 
 const db = new PrismaClient();
 
 const postsPath = path.join(__dirname, "../posts");
+
+export const convertImageToBase64 = async (imgPath: string) => {
+  const imagesPath = path.join(__dirname, "../assets/images");
+
+  const fullPath = path.join(imagesPath, imgPath);
+  const thumbnail = await fs.readFile(fullPath);
+
+  const resizedImage = await sharp(thumbnail).resize(320, 320).toBuffer();
+
+  const extensionName = path.extname(fullPath);
+
+  const base64ImageStr = `data:image/${extensionName
+    .split(".")
+    .pop()};base64,${resizedImage.toString("base64")}`;
+
+  return base64ImageStr;
+};
 
 async function seed() {
   await db.post.deleteMany();

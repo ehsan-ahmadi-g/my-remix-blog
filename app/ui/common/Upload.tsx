@@ -47,11 +47,11 @@ const MyInput = <T extends Record<string, unknown>>({
         <Upload
           {...props}
           showUploadList={false}
-          onChange={(info) => {
+          onChange={async (info) => {
             const reader = new FileReader();
             reader.readAsDataURL(info.file as unknown as Blob);
 
-            reader.onload = () => {
+            reader.onload = async () => {
               onChange(reader.result);
             };
           }}
