@@ -47,7 +47,7 @@ const MyInput = <T extends Record<string, unknown>>({
         <Upload
           {...props}
           showUploadList={false}
-          onChange={async (info) => {
+          onChange={(info) => {
             const reader = new FileReader();
             reader.readAsDataURL(info.file as unknown as Blob);
 

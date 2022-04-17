@@ -27,16 +27,18 @@ import { useDisplayErrors } from "../../hooks";
 import { AppErrors } from "../../types";
 
 import { getUserId, getUserInfo, requireUserId } from "../../utils/auth.server";
+import { resizeImageFile } from "../../utils/utils.server";
 import { Layout } from "../../ui";
 
 const PostSchema = z.object({
   title: z.string().nonempty("title is required").default(""),
   description: z.string().nonempty("description is required").default(""),
   markdown: z.string().nonempty("markdown is required").default(""),
+  thumbnail: z.string().nonempty("thumbnail is required").default(""),
   categories: z.array(z.string()),
 });
 
-type NewPostScheme = z.infer<typeof PostSchema> & { thubmnail: string };
+type NewPostScheme = z.infer<typeof PostSchema>;
 
 type LoaderData = {
   categories: Array<Pick<Category, "name" | "id">>;
@@ -90,7 +92,7 @@ export const action: ActionFunction = async ({ request }) => {
     description: data.description,
     markdown: data.markdown,
     categories: data.categories,
-    thubmnail: data.thubmnail,
+    thumbnail: data.thumbnail,
   });
 
   if (!x.success) {
@@ -104,6 +106,8 @@ export const action: ActionFunction = async ({ request }) => {
       /^[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[089ab][0-9a-f]{3}-[0-9a-f]{12}$/i
     );
 
+    const resizedThumbnail = await resizeImageFile(x.data.thumbnail);
+
     const newPost = await db.post.create({
       data: {
         title: x.data.title,
@@ -111,10 +115,8 @@ export const action: ActionFunction = async ({ request }) => {
         description: x.data.description,
         content: x.data.markdown,
         authorId: userId,
-        ...(data.thumbnail && {
-          thumbnail: data.thumbnail,
-          headerImage: data.thumbnail,
-        }),
+        thumbnail: resizedThumbnail,
+        headerImage: x.data.thumbnail,
         categories: {
           connect: x.data.categories
             .map((id) => ({ id }))
@@ -192,7 +194,7 @@ export default function NewPost() {
             options={loaderData.categories}
           />
 
-          <Upload className="my-5" name="thubmnail" control={form.control} />
+          <Upload className="my-5" name="thumbnail" control={form.control} />
 
           <button
             className="flex flex-row justify-center mx-auto border border-xcolor4 rounded px-4 py-2 mr-2"

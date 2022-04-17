@@ -684,6 +684,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 7rem;
 }
 
+.max-w-full {
+  max-width: 100%;
+}
+
 .scale-105 {
   --tw-scale-x: 1.05;
   --tw-scale-y: 1.05;
@@ -692,6 +696,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .resize-none {
   resize: none;
+}
+
+.resize {
+  resize: both;
 }
 
 .grid-cols-3 {
@@ -1036,6 +1044,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .hover\:bg-xcolor4:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(102 252 241 / var(--tw-bg-opacity));
+}
+
+.hover\:text-xcolor0:hover {
+  --tw-text-opacity: 1;
+  color: rgb(26 26 29 / var(--tw-text-opacity));
 }
 
 .hover\:text-xcolor1:hover {

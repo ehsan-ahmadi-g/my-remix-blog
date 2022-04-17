@@ -55,13 +55,13 @@ const Post: React.FC<P> = ({
         </p>
       </div>
 
-      <div className="flex flex-col items-center mt-4">
-        <div className="flex flex-row justify-between items-center py-2">
+      <div className="flex flex-col items-center">
+        <div className="py-2">
           {tags?.length
             ? tags.map((tag) => (
                 <Tag
                   key={tag.name}
-                  className="text-sm mx-2 p-2 bg-[#0389A7] text-white border-0 capitalize font-semibold"
+                  className="inline-flex text-sm m-2 p-2 bg-[#0389A7] text-white border-0 capitalize font-semibold"
                 >
                   {tag.name}
                 </Tag>
