@@ -1,12 +1,18 @@
 # Remix
 
-This directory is a brief example of a [Remix](https://remix.run/docs) site that can be deployed to Vercel with zero configuration.
+This directory is an example of a [Remix](https://remix.run/docs) site that is deployed on vercel
 
-## Deploy Your Own
+this is a simple blog with cru support which used the below technologies
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/remix&template=remix)
+- ant design ui framework
+- tailwind css
+- prisma.io as a type ORM
 
-_Live Example: https://remix-run-template.vercel.app_
+## Preview
+
+you can see a working demo of the website [here](https://vercel-made-remix.vercel.app/)
+
+give it a go
 
 ## Development
 
@@ -23,5 +29,3 @@ npm run dev
 ```
 
 Open up [http://localhost:3000](http://localhost:3000) and you should be ready to go!
-
-If you're used to using the `vercel dev` command provided by [Vercel CLI](https://vercel.com/cli) instead, you can also use that, but it's not needed.
