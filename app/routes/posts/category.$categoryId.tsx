@@ -23,6 +23,14 @@ export let loader: LoaderFunction = async ({ request, params }) => {
     where: {
       id: params.categoryId,
     },
+    select: {
+      name: true,
+      id: true,
+      posts: false,
+      slug: false,
+      thumbnail: false,
+      headerImage: true,
+    },
   });
 
   const data = {
@@ -66,7 +74,7 @@ export default function Posts() {
           style={{
             backgroundImage: `
           linear-gradient(to top right,rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-          url(${data.category.thumbnail})
+          url(${data?.category?.headerImage})
           `,
           }}
           className="flex flex-col items-start justify-center h-96 px-20 rounded bg-center bg-cover"

@@ -52,6 +52,10 @@ export let loader: LoaderFunction = async ({ request }) => {
     select: {
       name: true,
       id: true,
+      posts: false,
+      slug: false,
+      thumbnail: false,
+      headerImage: false,
     },
   });
 

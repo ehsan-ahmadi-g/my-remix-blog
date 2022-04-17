@@ -58,7 +58,16 @@ export let loader: LoaderFunction = async ({ request }) => {
     }),
   };
 
-  const categories = await db.category.findMany();
+  const categories = await db.category.findMany({
+    select: {
+      id: true,
+      name: true,
+      posts: false,
+      slug: false,
+      thumbnail: false,
+      headerImage: false,
+    },
+  });
 
   const currentUser = await getUserInfo(request);
 
