@@ -192,7 +192,7 @@ export default function Index() {
 
           <div className="flex flex-row justify-end items-center">
             <Link
-              className="border-0 bg-xcolor5 text-primary rounded px-4 py-2 mr-2 hover:text-primary"
+              className="border-0 bg-xcolor4 text-xcolor0 rounded px-4 py-2 mr-2 hover:text-xcolor0"
               to={`/posts/category/${category.id}`}
             >
               More...
