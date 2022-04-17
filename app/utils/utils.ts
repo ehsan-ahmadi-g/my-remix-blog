@@ -71,7 +71,7 @@ export const formatError = (
 };
 
 export const slugify = (text: string) => {
-  return text
+  const slugified = text
     .toString()
     .trim()
     .toLowerCase()
@@ -80,4 +80,6 @@ export const slugify = (text: string) => {
     .replace(/\-\-+/g, "-")
     .replace(/^-+/, "")
     .replace(/-+$/, "");
+
+  return `${slugified}--${Math.random().toString(36).slice(2, 10)}`;
 };

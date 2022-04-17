@@ -18,11 +18,12 @@ model User {
 }
 
 model Category {
-  id        String  @id @default(uuid())
-  name      String
-  slug      String  @unique
-  thumbnail String?
-  posts     Post[]
+  id          String  @id @default(uuid())
+  name        String
+  slug        String  @unique
+  thumbnail   String?
+  headerImage String?
+  posts       Post[]
 }
 
 model Post {
@@ -34,6 +35,7 @@ model Post {
   slug        String     @unique
   description String
   thumbnail   String?
+  headerImage String?
   content     String
   author      User?      @relation(fields: [authorId], references: [id])
   authorId    String

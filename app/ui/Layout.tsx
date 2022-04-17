@@ -67,14 +67,13 @@ function Layout({ children, className, user }: React.PropsWithChildren<P>) {
                     key={el.href}
                     className="mx-3 text-bold text-base font-semibold"
                   >
-                    <Link
+                    <a
                       rel="prefetch"
-                      prefetch="render"
-                      to={el.href}
+                      href={el.href}
                       target={"target" in el ? el.target : ""}
                     >
                       {el.text}
-                    </Link>
+                    </a>
                   </li>
                 ))}
 

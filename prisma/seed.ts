@@ -14,13 +14,21 @@ const db = new PrismaClient();
 
 const postsPath = path.join(__dirname, "../posts");
 
-export const convertImageToBase64 = async (imgPath: string) => {
-  const imagesPath = path.join(__dirname, "../assets/images");
+export const convertImageToBase64 = async (
+  imgPath: string,
+  options?: {
+    resize: boolean;
+  }
+) => {
+  const imagesPath = path.join(__dirname, "../app/assets/images");
 
   const fullPath = path.join(imagesPath, imgPath);
   const thumbnail = await fs.readFile(fullPath);
 
-  const resizedImage = await sharp(thumbnail).resize(320, 320).toBuffer();
+  const resizedImage =
+    options?.resize === false
+      ? thumbnail
+      : await sharp(thumbnail).resize(320, 320).toBuffer();
 
   const extensionName = path.extname(fullPath);
 
@@ -58,6 +66,9 @@ async function seed() {
         data: {
           name: category.name,
           slug: slugify(`${category.name}--${i}`),
+          headerImage: await convertImageToBase64(category.thumbnail, {
+            resize: false,
+          }),
           thumbnail: await convertImageToBase64(category.thumbnail),
         },
       });
@@ -68,6 +79,9 @@ async function seed() {
     getPosts().map(async (post) => {
       return db.post.create({
         data: {
+          headerImage: await convertImageToBase64(post.thumbnail, {
+            resize: false,
+          }),
           thumbnail: await convertImageToBase64(post.thumbnail),
           title: post.title.trim(),
           description: post.description,

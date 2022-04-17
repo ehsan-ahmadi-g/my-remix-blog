@@ -34,8 +34,19 @@ export let loader: LoaderFunction = async ({ request, params }) => {
           },
         },
       },
-      include: {
+      select: {
+        categories: true,
         author: true,
+        content: true,
+        description: true,
+        id: true,
+        slug: true,
+        thumbnail: true,
+        createdAt: true,
+        updatedAt: true,
+        published: true,
+        title: true,
+        authorId: true,
       },
     }),
   };

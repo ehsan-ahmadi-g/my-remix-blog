@@ -111,7 +111,10 @@ export const action: ActionFunction = async ({ request }) => {
         description: x.data.description,
         content: x.data.markdown,
         authorId: userId,
-        ...(data.thumbnail && { thumbnail: data.thumbnail }),
+        ...(data.thumbnail && {
+          thumbnail: data.thumbnail,
+          headerImage: data.thumbnail,
+        }),
         categories: {
           connect: x.data.categories
             .map((id) => ({ id }))
@@ -119,8 +122,6 @@ export const action: ActionFunction = async ({ request }) => {
         },
       },
     });
-
-    console.log({ newPost });
 
     return redirect(`/posts/${newPost.slug}`);
   } catch (error) {
@@ -191,7 +192,7 @@ export default function NewPost() {
             options={loaderData.categories}
           />
 
-          <Upload className="my-3" name="thubmnail" control={form.control} />
+          <Upload className="my-5" name="thubmnail" control={form.control} />
 
           <button
             className="flex flex-row justify-center mx-auto border border-xcolor4 rounded px-4 py-2 mr-2"

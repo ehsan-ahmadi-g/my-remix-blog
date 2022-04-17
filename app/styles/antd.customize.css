@@ -200,3 +200,7 @@ h6 {
 .ant-menu-submenu {
   position: absolute !important;
 }
+
+.ant-upload {
+  border: 0 !important;
+}

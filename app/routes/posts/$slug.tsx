@@ -6,7 +6,7 @@ import { Tag } from "antd";
 
 import type { Post, User, Category } from "@prisma/client";
 
-import DefaultImage from "../assets/images/post1.jpg";
+import DefaultImage from "../../assets/images/post1.jpg";
 
 import { Layout } from "../../ui";
 
@@ -22,8 +22,20 @@ export const loader: LoaderFunction = async ({ params, request }) => {
     where: {
       slug: params.slug,
     },
-    include: {
+    select: {
       categories: true,
+      author: true,
+      content: true,
+      description: true,
+      id: true,
+      slug: true,
+      thumbnail: true,
+      createdAt: true,
+      updatedAt: true,
+      published: true,
+      title: true,
+      authorId: true,
+      headerImage: true,
     },
   });
 
@@ -46,7 +58,7 @@ export default function PostSlug() {
               width: "100%",
               backgroundImage: `
               linear-gradient(to top right,rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)),
-              url(${data?.post?.thumbnail || DefaultImage})
+              url(${data?.post?.headerImage || DefaultImage})
               `,
             }}
           />

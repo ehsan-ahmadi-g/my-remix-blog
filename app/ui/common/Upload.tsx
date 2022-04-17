@@ -71,7 +71,11 @@ const MyInput = <T extends Record<string, unknown>>({
           </Button>
 
           {value && typeof value === "string" ? (
-            <img className="w-full h-auto border-0" src={value} alt="preview" />
+            <img
+              className="my-4 w-full h-auto border-0"
+              src={value}
+              alt="preview"
+            />
           ) : null}
         </Upload>
 

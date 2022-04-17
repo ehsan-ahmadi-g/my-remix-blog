@@ -50,6 +50,7 @@ const MyInput = <T extends Record<string, unknown>>({
         <Select
           size="large"
           mode="tags"
+          placeholder={placeholder}
           status={fieldState.error?.message ? "error" : ""}
           {...field}
           {...props}
