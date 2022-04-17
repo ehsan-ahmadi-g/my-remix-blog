@@ -530,11 +530,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-right: auto;
 }
 
-.mx-2 {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-}
-
 .my-3 {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
@@ -588,10 +583,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-right: 0.5rem;
 }
 
-.mt-4 {
-  margin-top: 1rem;
-}
-
 .mb-2 {
   margin-bottom: 0.5rem;
 }
@@ -610,6 +601,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .mt-20 {
   margin-top: 5rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
 }
 
 .mt-0\.5 {
@@ -682,10 +677,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-28 {
   width: 7rem;
-}
-
-.max-w-full {
-  max-width: 100%;
 }
 
 .scale-105 {

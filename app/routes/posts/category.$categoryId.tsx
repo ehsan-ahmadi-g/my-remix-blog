@@ -43,7 +43,14 @@ export let loader: LoaderFunction = async ({ request, params }) => {
         },
       },
       select: {
-        categories: true,
+        categories: {
+          select: {
+            name: true,
+            id: true,
+            thumbnail: false,
+            headerImage: false,
+          },
+        },
         author: true,
         content: true,
         description: true,

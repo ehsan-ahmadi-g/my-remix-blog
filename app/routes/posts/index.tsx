@@ -31,6 +31,8 @@ export let loader: LoaderFunction = async ({ request }) => {
         select: {
           name: true,
           id: true,
+          thumbnail: false,
+          headerImage: false,
         },
       },
       author: true,

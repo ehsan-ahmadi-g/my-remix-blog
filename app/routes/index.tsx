@@ -18,7 +18,7 @@ import HeaderBG from "../assets/images/home-header.jpeg";
 import Carousel1 from "../assets/images/carousel-1.jpg";
 import Carousel2 from "../assets/images/carousel-2.jpg";
 
-type PostWithCategory = Post & {
+type PostWithCategory = Exclude<Post, "headerImage"> & {
   categories: Array<Category>;
   author: User | null;
 };
@@ -41,7 +41,12 @@ export let loader: LoaderFunction = async ({ request }) => {
   const data: LoaderData = {
     posts: await db.post.findMany({
       select: {
-        categories: true,
+        categories: {
+          select: {
+            name: true,
+            id: true,
+          },
+        },
         author: true,
         content: true,
         description: true,
@@ -57,6 +62,8 @@ export let loader: LoaderFunction = async ({ request }) => {
       },
     }),
   };
+
+  console.log({ posts: JSON.stringify(data.posts, null, 2) });
 
   const categories = await db.category.findMany({
     select: {
