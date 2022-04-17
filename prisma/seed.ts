@@ -48,8 +48,8 @@ async function seed() {
 
   const user = await db.user.create({
     data: {
-      email: "jack@user.com",
-      name: "jack",
+      email: "user1@gmail.com",
+      name: "user1",
       passwordHash,
     },
   });

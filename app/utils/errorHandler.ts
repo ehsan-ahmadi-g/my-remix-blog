@@ -61,10 +61,6 @@ const formatError = (
       ? detectPrismaError(errors)
       : errors;
 
-  console.log("==================");
-  console.log({ fieldErrors });
-  console.log("==================");
-
   return json(
     { fieldErrors, lastUpdatedAt: Date.now() },
     { status: 422, headers: { "cache-control": "no-cache" } }

@@ -14,6 +14,8 @@ you can see a working demo of the website [here](https://vercel-made-remix.verce
 
 give it a go
 
+sample user = email : user1@gmail.com , password : password
+
 ## Development
 
 To run your Remix app locally, make sure your project's local dependencies are installed:

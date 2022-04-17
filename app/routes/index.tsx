@@ -63,8 +63,6 @@ export let loader: LoaderFunction = async ({ request }) => {
     }),
   };
 
-  console.log({ posts: JSON.stringify(data.posts, null, 2) });
-
   const categories = await db.category.findMany({
     select: {
       id: true,

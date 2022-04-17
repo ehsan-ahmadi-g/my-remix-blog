@@ -81,8 +81,6 @@ export default function LoginComp() {
   const transition = useTransition();
   const submit = useSubmit();
 
-  console.log({ errors, transition });
-
   useDisplayErrors(errors);
 
   const form = useForm<UserSchema>({
